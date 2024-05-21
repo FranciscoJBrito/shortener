@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[show edit destroy]
+  before_action :set_link, only: %i[edit destroy]
+  require_relative '../services/shortener'
 
   # GET /links or /links.json
   def index
@@ -7,7 +8,10 @@ class LinksController < ApplicationController
   end
 
   # GET /links/1 or /links/1.json
-  def show; end
+  def show
+    @link = Link.find_by(lookup_code: params[:lookup_code])
+    redirect_to @link.original_url, allow_other_host: true
+  end
 
   # GET /links/new
   def new
@@ -22,13 +26,7 @@ class LinksController < ApplicationController
     shortener = ShortenerService.new(link_params[:original_url])
     @link = shortener.generate_short_link
 
-    if @link.persisted?
-      respond_to do |format|
-        format.html { redirect_to link_path(@link.lookup_code) }
-      end
-    else
-      render 'home/index'
-    end
+    redirect_to '/links'
   end
 
   # DELETE /links/1 or /links/1.json

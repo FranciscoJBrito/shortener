@@ -5,7 +5,7 @@
   </p>
   <p class="mt-3">
     <strong class="block font-medium mb-1">Link acortado:</strong>
-    <%= link.lookup_code || "No hay link acortado" %>
+    <%= link.shortened_url || "No hay link acortado" %>
   </p>
-
+  <%= button_to "Eliminar", link_path(id: link.id), method: :delete   %>
 </div>
