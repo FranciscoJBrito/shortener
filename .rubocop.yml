@@ -1,0 +1,81 @@
+# .rubocop.yml
+require: rubocop-rails
+
+# AllCops
+# Configuraci�n global para todos los cops
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "bin/**/*" # Excluir todos los archivos en la carpeta bin
+    - "db/**/*" # Excluir el archivo db/schema.rb
+    - "public/**/*" # Excluir todos los archivos en la carpeta public
+    - "config/**/*" # Excluir el archivo config/initializers/bot.rb
+    - "vendor/**/*" # Excluir todos los archivos en la carpeta vendor
+    - "node_modules/**/*" # Excluir todos los archivos en la carpeta node_modules
+    - "lib/tasks/auto_annotate_models.rake" # Excluir el archivo lib/tasks/auto_annotate_models.rake
+    - "tmp/**/*"
+    - "storage/**/*"
+
+Documentation:
+  Enabled: false
+
+# Style/Documentation
+# Configuraci�n para la documentaci�n del c�digo
+Style/Documentation:
+  Enabled: true
+
+# Layout/IndentationWidth
+# Configuraci�n para el ancho de indentaci�n
+Layout/IndentationWidth:
+  Enabled: true
+  Width: 2
+
+# Style/FrozenStringLiteralComment
+# Configuraci�n para los comentarios de las literales de cadena congeladas
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Layout/TrailingWhitespace
+# Configuraci�n para los espacios en blanco al final de las l�neas
+Layout/TrailingWhitespace:
+  Enabled: true
+
+# Layout/LineLength
+# Configuraci�n para la longitud m�xima de l�nea
+Layout/LineLength:
+  Enabled: true
+  Max: 120
+
+# Naming/FileName
+# Configuraci�n para los nombres de archivo
+Naming/FileName:
+  Enabled: true
+  Include:
+    - "**/*.rb" # Incluir todos los archivos Ruby
+
+# Metrics/BlockLength
+# Configuraci�n para la longitud de los bloques
+Metrics/BlockLength:
+  Max: 30
+  Exclude:
+    - spec/**/*
+    - "**/routes.rb"
+    - "config/environments/*"
+    - db/schema.rb
+
+# Metrics/MethodLength
+# Configuraci�n para la longitud de los m�todos
+Metrics/MethodLength:
+  Max: 19
+
+# Rails
+# Configuraci�n espec�fica para Ruby on Rails
+Rails:
+  Enabled: true
+  Include:
+    - "**/*.rb" # Incluir todos los archivos Ruby
+
+# Lint
+# Configuraci�n para la detecci�n de problemas de estilo y calidad de c�digo
+Lint:
+  Enabled: true

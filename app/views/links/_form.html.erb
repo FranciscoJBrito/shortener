@@ -1,0 +1,9 @@
+<%= form_with(model: @links, url: links_path, method: :post, class: "contents") do |form| %> 
+
+  <div class="my-5">
+    <%= form.text_field :original_url, value: params[:original_url], class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full", placeholder: "https://google.com" %>
+  </div>
+
+  <div class="inline"> <%= form.submit "Crear link", class: "rounded-lg py-3 px-5 bg-red-600 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<%end%>
