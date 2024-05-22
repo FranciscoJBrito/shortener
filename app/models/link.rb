@@ -7,6 +7,6 @@ class Link < ApplicationRecord
   end
 
   def shortened_url
-    "http://localhost:3000/#{lookup_code}"
+    "#{ENV.fetch('HOST', nil)}/#{lookup_code}"
   end
 end

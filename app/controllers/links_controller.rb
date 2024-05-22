@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
   before_action :set_link, only: %i[edit destroy]
+  before_action :authenticate_user!
   require_relative '../services/shortener'
 
   # GET /links or /links.json
@@ -34,7 +35,7 @@ class LinksController < ApplicationController
     @link.destroy
 
     respond_to do |format|
-      format.html { redirect_to links_url, notice: 'Link was successfully destroyed.' }
+      format.html { redirect_to links_url, notice: 'El link fue eliminado.' }
       format.json { head :no_content }
     end
   end
