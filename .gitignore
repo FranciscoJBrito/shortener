@@ -36,8 +36,5 @@
 # Ignore .env
 .env*
 
-# Ignore .dockerignore
-.dockerignore
-
 # Ignore coverage folder
 /coverage
