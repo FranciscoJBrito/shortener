@@ -1,10 +1,19 @@
 <div data-controller="dialog" data-action="click->dialog#backdropClose" class="relative">
-  <dialog data-dialog-target="dialog" class="p-4 rounded-lg w-96">
+  <dialog data-dialog-target="dialog" class="p-6 rounded-lg w-96 shadow-xl transition-all top-[-4rem]">
     <%= form_with(model: @links, url: links_path, method: :post, class: "contents ") do |form| %>
       <div class="">
-        <div class="my-5">
+        <div class="flex justify-start items-center gap-2 mb-4">
+          <div class="flex justify-center items-center h-8 w-8 flex-shrink-0 rounded-full bg-green-100">
+          <svg class="size-5 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path d="M9.5 14.5L14.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M16.8463 14.6095L19.4558 12C21.5147 9.94113 21.5147 6.60303 19.4558 4.54416C17.397 2.48528 14.0589 2.48528 12 4.54416L9.39045 7.1537M14.6095 16.8463L12 19.4558C9.94113 21.5147 6.60303 21.5147 4.54416 19.4558C2.48528 17.397 2.48528 14.0589 4.54416 12L7.1537 9.39045" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          </div>
+          <h2 class="text-2xl font-semibold text-gray-800">Nuevo link</h2>
+        </div>
+        <div class="mb-5">
           <%= form.label :attribute, "Nombre" %>
-          <%= form.text_field :original_url, value: params[:original_url], class: "rounded-lg py-3 w-full border-gray-200 focus:border-green-400 focus:outline-none focus:ring-1 focus:ring-green-400 mt-2", placeholder: "Google" %>
+          <%= form.text_field :name, value: params[:name], class: "rounded-lg py-3 w-full border-gray-200 focus:border-green-400 focus:outline-none focus:ring-1 focus:ring-green-400 mt-2", placeholder: "Google" %>
         </div>
         <div class="my-5">
           <%= form.label :attribute, "URL original" %>
@@ -13,7 +22,7 @@
         <div class="inline"> <%= form.submit "Acortar link", class: "rounded-lg py-3 px-5 bg-green-400 text-white inline-block font-medium cursor-pointer" %>
         </div>
       </div>
-      <button type="button" data-action="dialog#close" autofocus class="absolute top-4 right-4">
+      <button type="button" data-action="dialog#close" autofocus class="absolute top-5 right-5">
         <%= image_tag("icons/close.svg", class: "w-6 h-6 p-1 hover:bg-gray-100 rounded-full ") %>
       </button>
     <%end%>
