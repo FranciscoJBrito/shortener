@@ -13,6 +13,10 @@ application.register("clipboard", Clipboard);
 import Notification from '@stimulus-components/notification'
 application.register('notification', Notification)
 
+
+import Dialog from '@stimulus-components/dialog'
+application.register('dialog', Dialog)
+
 // Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)

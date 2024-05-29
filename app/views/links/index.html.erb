@@ -5,11 +5,11 @@
 
   <% content_for :title, "Links" %>
 
-  <div class="flex justify-between items-center mb-4">
+  <div class="flex justify-between items-center mb-8">
     <h1 class="font-bold text-4xl">Tus links</h1>
+    <%= render "form" %>
   </div>
-
-  <%= render "form" %>
+  
    
   <div id="links" class="min-w-full grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     <% @links.each do |link| %>
