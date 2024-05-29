@@ -24,7 +24,7 @@ class LinksController < ApplicationController
 
   # POST /links or /links.json
   def create
-    shortener = ShortenerService.new(link_params[:original_url])
+    shortener = ShortenerService.new(link_params[:original_url], link_params[:name])
     @link = shortener.generate_short_link
 
     redirect_to '/links'
@@ -49,6 +49,6 @@ class LinksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def link_params
-    params.require(:link).permit(:original_url)
+    params.require(:link).permit(:original_url, :name)
   end
 end
