@@ -1,6 +1,6 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
-en:
+es:
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."
@@ -63,3 +63,71 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
+
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: "Confirmación de su correo electrónico ha sido exitosa."
+      send_instructions: "Recibirá un correo electrónico con instrucciones sobre cómo confirmar su dirección de correo electrónico en unos minutos."
+      send_paranoid_instructions: "Si su dirección de correo electrónico existe en nuestra base de datos, recibirá un correo electrónico con instrucciones sobre cómo confirmar su dirección de correo electrónico en unos minutos."
+    failure:
+      already_authenticated: "Ya ha iniciado sesión."
+      inactive: "Su cuenta no está activada todavía."
+      invalid: "%{authentication_keys} o contraseña inválida."
+      locked: "Su cuenta está bloqueada."
+      last_attempt: "Le queda un intento más antes de que su cuenta se bloquee."
+      not_found_in_database: "%{authentication_keys} o contraseña inválida."
+      timeout: "Su sesión ha expirado. Por favor, inicie sesión nuevamente para continuar."
+      unauthenticated: "Tiene que iniciar sesión o registrarse para continuar."
+      unconfirmed: "Debe confirmar su dirección de correo electrónico antes de continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instrucciones de confirmación"
+      reset_password_instructions:
+        subject: "Instrucciones para restablecer la contraseña"
+      unlock_instructions:
+        subject: "Instrucciones para desbloquear"
+      email_changed:
+        subject: "Correo electrónico cambiado"
+      password_change:
+        subject: "Contraseña cambiada"
+    omniauth_callbacks:
+      failure: "No se pudo autenticar desde %{kind} porque \"%{reason}\"."
+      success: "Autenticado exitosamente desde la cuenta de %{kind}."
+    passwords:
+      no_token: "No puede acceder a esta página sin provenir de un correo electrónico de restablecimiento de contraseña. Si proviene de un correo electrónico de restablecimiento de contraseña, asegúrese de haber utilizado la URL completa proporcionada."
+      send_instructions: "Recibirá un correo electrónico con instrucciones sobre cómo restablecer su contraseña en unos minutos."
+      send_paranoid_instructions: "Si su dirección de correo electrónico existe en nuestra base de datos, recibirá un enlace de recuperación de contraseña en su dirección de correo electrónico en unos minutos."
+      updated: "Su contraseña ha sido cambiada exitosamente. Ahora ha iniciado sesión."
+      updated_not_active: "Su contraseña ha sido cambiada exitosamente."
+    registrations:
+      destroyed: "¡Adiós! Su cuenta ha sido cancelada exitosamente. Esperamos verlo nuevamente pronto."
+      signed_up: "¡Bienvenido! Se ha registrado exitosamente."
+      signed_up_but_inactive: "Se ha registrado exitosamente. Sin embargo, no pudimos iniciar sesión porque su cuenta aún no está activada."
+      signed_up_but_locked: "Se ha registrado exitosamente. Sin embargo, no pudimos iniciar sesión porque su cuenta está bloqueada."
+      signed_up_but_unconfirmed: "Se ha registrado exitosamente. Se ha enviado un mensaje con un enlace de confirmación a su dirección de correo electrónico. Por favor, siga el enlace para activar su cuenta."
+      update_needs_confirmation: "Ha actualizado su cuenta exitosamente, pero necesitamos verificar su nueva dirección de correo electrónico. Por favor, revise su correo electrónico y siga el enlace de confirmación para confirmar su nueva dirección de correo electrónico."
+      updated: "Su cuenta ha sido actualizada exitosamente."
+      updated_but_not_signed_in: "Su cuenta ha sido actualizada exitosamente, pero como su contraseña ha sido cambiada, necesita iniciar sesión nuevamente."
+    sessions:
+      signed_in: "Inicio de sesión con éxito."
+      signed_out: "Has cerrado tu sesión."
+      already_signed_out: "Ya has iniciado sesión."
+    unlocks:
+      send_instructions: "Recibirá un correo electrónico con instrucciones sobre cómo desbloquear su cuenta en unos minutos."
+      send_paranoid_instructions: "Si su cuenta existe, recibirá un correo electrónico con instrucciones sobre cómo desbloquearla en unos minutos."
+      unlocked: "Su cuenta ha sido desbloqueada exitosamente. Por favor, inicie sesión para continuar."
+  errors:
+    messages:
+      already_confirmed: "ya fue confirmado, por favor intente iniciar sesión"
+      confirmation_period_expired: "necesita ser confirmado dentro de %{period}, por favor solicite uno nuevo"
+      expired: "ha expirado, por favor solicite uno nuevo"
+      not_found: "no encontrado"
+      not_locked: "no estaba bloqueado"
+      not_saved:
+        one: "1 error impidió que este %{resource} fuera guardado:"
+        other: "%{count} errores impidieron que este %{resource} fuera guardado:"
+
