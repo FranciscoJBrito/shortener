@@ -1,11 +1,12 @@
+require_relative '../services/shortener'
+
 class LinksController < ApplicationController
-  before_action :set_link, only: %i[edit destroy]
+  before_action :set_link, only: %i[destroy]
   before_action :authenticate_user!
-  require_relative '../services/shortener'
 
   # GET /links or /links.json
   def index
-    @links = Link.all
+    @links = Link.where(user_id: current_user.id)
   end
 
   # GET /links/1 or /links/1.json
@@ -14,17 +15,9 @@ class LinksController < ApplicationController
     redirect_to @link.original_url, allow_other_host: true
   end
 
-  # GET /links/new
-  def new
-    @link = Link.new
-  end
-
-  # GET /links/1/edit
-  def edit; end
-
   # POST /links or /links.json
   def create
-    shortener = ShortenerService.new(link_params[:original_url], link_params[:name])
+    shortener = ShortenerService.new(link_params[:original_url], link_params[:name], current_user.id)
     @link = shortener.generate_short_link
 
     redirect_to '/links'
