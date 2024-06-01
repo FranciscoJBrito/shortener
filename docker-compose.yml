@@ -2,6 +2,7 @@ services:
   shortener:
     container_name: shortener
     tty: true
+    image: franjb/shortener:latest
     build:
       context: .
       dockerfile: Dockerfile
